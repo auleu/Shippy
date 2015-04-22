@@ -5,6 +5,9 @@ public class Controlenave : MonoBehaviour {
 	float dir=0;
 	float lift=0;
 	Rigidbody2D Rgd;
+
+	public GameObject propulsionObject;
+
 	// Use this for initialization
 	void Start () {
 		Rgd = GetComponent<Rigidbody2D> ();
@@ -19,6 +22,13 @@ public class Controlenave : MonoBehaviour {
 		lift = Input.GetAxis ("Vertical")*11;
 		lift = Mathf.Clamp (lift, 0, 11);
 		Debug.Log (lift);
+
+		if(!propulsionObject.activeSelf && lift >0){
+			propulsionObject.SetActive(true);
+		}
+		if(lift == 0){
+			propulsionObject.SetActive(false);
+		}
 	}
 	void FixedUpdate () {
 		Rgd.AddRelativeForce (new Vector2 (0, lift));

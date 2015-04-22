@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\scripts\CameraFollow.cs" />
+     <Compile Include="Assets\scripts\CameraZoom.cs" />
      <Compile Include="Assets\scripts\Controlenave.cs" />
      <None Include="Assets\Modular Space Raider\readme.txt" />
      <None Include="Assets\Modular Space Raider\Shader\how_to_use.txt" />
